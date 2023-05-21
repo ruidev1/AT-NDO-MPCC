@@ -84,7 +84,7 @@ if ModelParams.ModelNo==1 || ModelParams.ModelNo==2
                   0, 0, 0];
     
     dtest = [-0.01; 0.03; -0.1];
-%     f(4:6) = f(4:6) + dhat;
+    f(4:6) = f(4:6) + dhat;
 
    %% Derivatives of the force laws
    % F_rx
