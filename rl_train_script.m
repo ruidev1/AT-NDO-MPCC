@@ -117,8 +117,8 @@ else
     
     figure(16);
     simTimeSequence = 0:env.MPC_vars.Ts:env.MPC_vars.Ts * (400-1);
-    plot(simTimeSequence,env.length_log(1,:), 'Color', '#EDB120', 'LineStyle', '--', 'LineWidth',2, 'DisplayName', 'AT-MPCC');
-%     plot(simTimeSequence,env.length_log(1,:),'r', 'LineWidth',2, 'DisplayName', 'AT-NDO-MPCC');
+%     plot(simTimeSequence,env.length_log(1,:), 'Color', '#EDB120', 'LineStyle', '--', 'LineWidth',2, 'DisplayName', 'AT-MPCC');
+    plot(simTimeSequence,env.length_log(1,:),'r', 'LineWidth',2, 'DisplayName', 'AT-NDO-MPCC');
     hold on
     xlabel('Time [sec]')
     ylabel('Driving Length [m]')

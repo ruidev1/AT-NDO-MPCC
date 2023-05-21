@@ -7,6 +7,7 @@ This work is based on the track data and MPCC control scheme from [MPCC](https:/
 git clone the AT-NDO-MPCC repository and the submodule [hpipm](https://github.com/giaf/hpipm) solver
 ```
 git clone https://github.com/ruidev1/AT-NDO-MPCC.git
+cd ./AT-NDO-MPCC
 git submodule init
 git submodule update
 ```
