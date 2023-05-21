@@ -40,7 +40,7 @@ trainOpts = rlTrainingOptions(...
     'StopTrainingValue',1000,...
     'SaveAgentCriteria','EpisodeReward',...
     'SaveAgentValue',449,...
-    "SaveAgentDirectory",pwd + "/runs_400simN_obs6_cur_pos_eC_vel_action3_qC_qV_qL_reward_eC_v2_SAC/Agents");
+    "SaveAgentDirectory",pwd + "/savedAgents/Agents");
 trainOpts.UseParallel = true;
 trainOpts.ParallelizationOptions.Mode = 'async';
 
@@ -48,8 +48,7 @@ if isTrain
 %     env.plotOn = 1;
     trainingStats = train(agent,env,trainOpts);
 else
-%     load(pwd + "/runs_100simN_obs6_cur_pos_eC_action3_qC_qV_qL_reward_eC_v_mapping_DDPG/Agents/Agent40", "saved_agent");
-    load(pwd + "/runs_400sim_obs_6_actions_4_final/Agent4999", "saved_agent");
+    load(pwd + "/savedAgents/Agent4999", "saved_agent");
     agent = saved_agent;
     env.plotOn = 1;
     env.isTrain = false;
@@ -127,34 +126,3 @@ else
     set(gca,'FontSize',12)
     
 end
-
-% if isTrain
-% 
-%     agent = rlTD3Agent(obsInfo, actInfo);
-%     
-%     opt = rlTrainingOptions( ...
-%         "MaxEpisodes",2000, ...
-%         "MaxStepsPerEpisode",500, ...
-%         "SaveAgentCriteria","EpisodeReward", ...
-%         "SaveAgentValue",50, ...
-%         "SaveAgentDirectory",pwd + "/runs_obs_cur_action_qC_qVtheta_reward_curratio/Agents");
-%     
-%     trainResults = train(agent, env, opt);
-% else
-%     load(pwd + "/runs_4_params_qC_qL_qOmega_qV_reward_curvature_obs_pre/Agents/Agent500.mat", "saved_agent");
-%     agent = saved_agent;
-%     Observation = env.reset();
-%     simOpts = rlSimulationOptions(...
-%         'MaxSteps',25);
-%     
-%     %     Action = getAction(agent, Observation);
-%     %     [Observation,Reward,IsDone,LoggedSignals] = env.step(Action);
-%     experience = sim(env,agent,simOpts);
-%     load Info_log.mat out;
-%     eC_log = out(1:2, :);
-%     v_log = out(3:4, :);
-% %     actions = experience.Action;
-% %     action = actions.CostWeights.Data;
-%     PlotInfo(eC_log, v_log, simN, 0.02, "other");
-%     simulation_interface;
-% end
