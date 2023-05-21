@@ -4,13 +4,13 @@ an AT-NDO-MPCC control scheme for Autonomous Driving
 This work is based on the track data and MPCC control scheme from [MPCC](https://github.com/alexliniger/MPCC)
 
 ## Getting started
-git clone the AT-NDO-MPCC repository and the submodule hpipm solver
+git clone the AT-NDO-MPCC repository and the submodule [hpipm](https://github.com/giaf/hpipm) solver
 ```
 git clone https://github.com/ruidev1/AT-NDO-MPCC.git
 git submodule init
 git submodule update
 ```
-follow the instruction of [hpipm] to build the solver environment, we setup the environment in Linux:
+follow the instruction of [hpipm](https://github.com/giaf/hpipm) to build the solver environment, we setup the environment in Linux:
 1) From the BLASFEO root folder, run `make shared_library -j 4 && sudo make install_shared`
 2) From the HPIPM root folder, run `make shared_library -j 4 && sudo make install_shared`
 3) In a terminal, navigate to the folder `hpipm/interfaces/matlab_octave`.
