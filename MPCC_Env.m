@@ -207,8 +207,8 @@ classdef MPCC_Env < rl.env.MATLABEnvironment
                 this.disturbance(:, this.sims) = this.disturbance(:, this.sims-1) - decay * this.disturbance(:, this.sims-1) + 0.001 * wgn(3,1,0);
 %                 this.disturbance(:, this.sims) = this.disturbance(:, this.sims-1) - decay * this.disturbance(:, this.sims-1);
             end
-%             d = this.disturbance(:, this.sims);
-            d = 0;
+            d = this.disturbance(:, this.sims);
+%             d = 0;
             
             % Simulation
             for i = 1: this.simN

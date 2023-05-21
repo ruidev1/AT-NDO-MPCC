@@ -20,8 +20,8 @@ for i = 1: simN
         disturbance(:, i) = disturbance(:, i-1) - decay * disturbance(:, i-1) + 0.001 * wgn(3,1,0);
 %         disturbance(:, i) = disturbance(:, i-1) - decay * disturbance(:, i-1);
     end
-%     d = disturbance(:, i);
-    d = 0;
+    d = disturbance(:, i);
+%     d = 0;
     % augment state and inputs by shifting previus optimal solution
     [x,u] = augState(x,u,x0,MPC_vars,ModelParams,tl, d);
 
